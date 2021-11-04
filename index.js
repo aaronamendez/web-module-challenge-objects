@@ -62,17 +62,17 @@ const burger = {
 	price: 18,
 	category: "Lunch",
 	discount: function (string) {
-		if (string === "teacher" || "student") {
-			let discountedPrice = this.price;
-			this.discounted -= this.price *= 0.25;
-			return discountedPrice;
+		if (string === "teacher" || string === "student") {
+			return this.price - this.price * 0.25;
+		} else if (string === "public") {
+			return this.price - this.price * 0.1;
 		}
 	},
 };
 
-console.log(burger.discount("teacher"));
-console.log(burger.discount("student"));
-console.log(burger.discount("public"));
+// console.log(burger.discount("teacher"));
+// console.log(burger.discount("student"));
+// console.log(burger.discount("public"));
 
 ///////////////Reviews (MVP)///////////////////
 const reviews = [
@@ -119,6 +119,7 @@ const reviews = [
 Using the reviews array above:
   1. log only Julius' feedback to the console - no function needed 
 */
+console.log(reviews[5].feedback);
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Reyna's feedback is missing! Use what you know to do the following: (no function needed) 
