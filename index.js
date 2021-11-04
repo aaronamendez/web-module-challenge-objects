@@ -191,9 +191,23 @@ Use the getReviewsByRating function below to do the following:
   ]
 */
 
-function getReviewByRating(/* code here */) {
-	/* code here */
+function getReviewByRating(array, rating) {
+	const searchedRating = [];
+	for (let i = 0; i < array.length; i++) {
+		const range = Math.floor(array[i].rating);
+		const userInput = Math.floor(rating);
+		if (range === userInput) {
+			searchedRating.push(array[i]);
+		}
+	}
+
+	if (searchedRating.length === 0) {
+		console.log("No ratings found.");
+	}
+	return searchedRating;
 }
+
+console.log("Stretch 1:", getReviewByRating(reviews, 4.5));
 
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 2: 💪💪💪💪💪💪💪💪💪💪   
 Use the getLongReviews function below to do the following:
