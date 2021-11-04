@@ -19,8 +19,13 @@ The function should:
   Example createMenuItem('tacos', 8, 'Lunch') should return {name: 'tacos', price: 8, category: 'Lunch'}
 */
 
-function createMenuItem(/*Your code here*/) {
-	/*Your code here*/
+function createMenuItem(name, price, category) {
+	const newObject = {
+		name,
+		price,
+		category,
+	};
+	return newObject;
 }
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 1b: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -32,6 +37,12 @@ Test your createMenuItems function by doing the following:
   
   For example: createMenuItem("pizza",5,"lunch") would return this as the object: {name:"Pizza",price:5,category:"lunch"}
 */
+// const cookie = createMenuItem("Cookie", 3, "Desserts");
+// console.log(cookie);
+// const cake = createMenuItem("Cake", 10, "Desserts");
+// console.log(cake);
+// const icecream = createMenuItem("Icecream", 5, "Desserts");
+// console.log(icecream);
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 You're having a lunch special! 25% off for teachers and students, 10% off for everyone else. Add a method to the 
@@ -45,11 +56,23 @@ Using the burger object below do the following:
 
   For example: burger.discount("teacher") would return 13.5 and burger.discount("public") would return 16.2
 */
+
 const burger = {
 	name: "Burger",
 	price: 18,
 	category: "Lunch",
+	discount: function (string) {
+		if (string === "teacher" || "student") {
+			let discountedPrice = this.price;
+			this.discounted -= this.price *= 0.25;
+			return discountedPrice;
+		}
+	},
 };
+
+console.log(burger.discount("teacher"));
+console.log(burger.discount("student"));
+console.log(burger.discount("public"));
 
 ///////////////Reviews (MVP)///////////////////
 const reviews = [
